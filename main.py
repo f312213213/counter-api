@@ -19,7 +19,7 @@ app.add_middleware(
 )
 
 
-@app.api_route("/", methods=["GET", "POST", "OPTIONS"])
+@app.get("/")
 async def root():
     print(testNumber)
     return {"number": testNumber}
