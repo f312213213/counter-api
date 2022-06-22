@@ -25,19 +25,19 @@ async def root():
     return {"number": testNumber}
 
 
-class b(BaseModel):
+class Body(BaseModel):
     by: int
 
 
 @app.post("/increment")
-async def increment(b: b):
+async def increment(b: Body):
     global testNumber
     testNumber += int(b.by)
     return {"number": testNumber}
 
 
 @app.post("/decrement")
-async def decrement(b: b):
+async def decrement(b: Body):
     global testNumber
     testNumber -= int(b.by)
     return {"number": testNumber}
