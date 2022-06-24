@@ -25,6 +25,11 @@ async def root():
     return {"number": testNumber}
 
 
+@app.get("/init")
+async def initApp():
+    return {"init": True}
+
+
 class Body(BaseModel):
     by: int
 
